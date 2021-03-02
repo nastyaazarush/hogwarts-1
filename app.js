@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 
-app.get('/', (req, res) =>
-{
-    res.send('Hello, World!')
-})
+app.use(express.static('public'))
 
+var indexRouter = require('./routes/index.js')
+
+app.use('/', indexRouter)
 module.exports = app
